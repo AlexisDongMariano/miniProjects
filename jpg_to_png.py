@@ -64,6 +64,8 @@ from PIL import Image
 
 class ImageProcess():
     def jpg_to_png(self, img, dest_dir, img_filename):
+        #clean_name = os.path.splitext(filename)[0] #we can also use os splittext to create tuples
+        #that separate filename and extension name
         png_filename = img_filename[:len(img_filename) - 3]
         try:
             img.save((dest_dir + png_filename + 'png'), 'png')
@@ -98,7 +100,7 @@ def set_dir(dir_input):
 
 def process_jpg(from_dir, dest_dir):
     process_img = ImageProcess()
-    for img_entry in os.scandir(from_dir):
+    for img_entry in os.scandir(from_dir): #or os.listdir(path)
         # img_entry.name #name of file
         # img_entry.path #path of file
         if img_entry.name.endswith('jpg') and img_entry.is_file():
