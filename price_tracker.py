@@ -1,9 +1,18 @@
 '''
 Date: Jun-16-2020
+
 Platform: Windows
+
 Description: [BASIC WEB SCRAPING] - sends an email to the hardcoded recipients
 if the item from a shoe shop has dropped its original price
+
+Usage: python price_tracker.py
+
+Sections: A
 '''
+
+#SECTION A
+
 import requests
 from bs4 import BeautifulSoup
 import smtplib
@@ -17,14 +26,14 @@ def check_price():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
         AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'}
 	
-	#beautiful soup webscraping initialization
+    #beautiful soup webscraping initialization
     page = requests.get(URL, headers=headers)
     soup = BeautifulSoup(page.content, 'html.parser')
     price = soup.find(class_='c-product-price__formatted-price').get_text()
     item = soup.find(class_='c-heading c-buy-module__product-title').get_text()
     converted_price = price[1:]
 	
-	#run function if the item of the price drops from the original price posted in the site
+    #run function if the item of the price drops from the original price posted in the site
     if float(converted_price) < 70:
         send_mail(item, price)
 
@@ -39,21 +48,21 @@ def send_mail(item, price):
     server.ehlo()
     server.login('email@gmail.com', 'password') #specify the sender email and password
 	
-	#compose the email message 
+    #compose the email message 
     subject = 'Aldo Shoe Price Checker'
     body = f'    Item: {item}\n\
     Price: {price}\n\
     Check this link: {URL}'
     msg = f'Subject: {subject}\n\n{body}'
 	
-	#list of email recipients
+    #list of email recipients
     email_addresses = [
         'email@gmail.com',
         'email@gmail.com',
         'email@gmail.com'
     ]
     
-	#send the email to the recipients
+    #send the email to the recipients
     for recipient in email_addresses:
         server.sendmail(
             'email@gmail.com',
