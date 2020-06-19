@@ -36,8 +36,8 @@ else:
     print('account doesn\'t exists')
 
 
-# Follow if you want this python file to be a Windows batch script
 # SECTION B
+# Follow if you want this python file to be a Windows batch script
 # On Windows, save the fle as pw.bat in the C:\Windows folder:
 # -----------------------------
 # @py.exe C:\Python34\pw.py %*
