@@ -1,13 +1,20 @@
 '''
 Date: Jun-12-2020
+
 Platform: Windows
+
 Description: Non-commented code (see SECTION D) allows to apply watermark from a pdf file to the pdf files in a specified
 folder/directory using PyPDF2 <https://pythonhosted.org/PyPDF2/index.html>
 **features merging multiple pdf files into 1 pdf file (see SECTION B)
+
 Usage: python pdf.py [watermark_file.pdf] [dir_of_pdfFiles/]
 **the watermark_file.pdf should be the same level of the pdf.py in the dir, else, specify the absolute path
 **the dir_of_pdfFiles should be the same level of the pdf.py in the dir, else, specify the absolute path
+
+Section: A-D
+**Actual working code found in SECTION D
 '''
+
 # SECTION A:
 # import PyPDF2 #module for pdf manipulation, stackoverflow prefers tika module
 # with open('../dummy.pdf', 'rb') as file:
