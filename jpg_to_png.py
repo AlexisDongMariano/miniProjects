@@ -1,14 +1,20 @@
 '''
-Jun-12-2020
+Date: Jun-12-2020
+
 Platform: Windows
-Simple Project that scans a specified directory for '.jpg' files and creates an equivalent
+
+Description: Simple Project that scans a specified directory for '.jpg' files and creates an equivalent
 '.png' files in a specified directory
 
 Usage: python jpg_to_png.py [sourceDirectory] [destinationDirectory]
 **directories will be created if doesn't exists
+
+Section: A-E
+**Actual working code in SECTION E
 '''
 
 ##############################################
+# SECTION A
 # PILLOW BASIC IMAGE METHODS
 # img = Image.open('./astro.jpg')
 
@@ -35,6 +41,7 @@ Usage: python jpg_to_png.py [sourceDirectory] [destinationDirectory]
 # with open(file, mode='r') as test_file:
 #     print(test_file)
 ###################################
+# SECTION B
 # #SCANNING FILES FROM DIRECTORY
 # directory = r'C:\Users\admin'
 # for entry in os.scandir(directory):
@@ -42,11 +49,13 @@ Usage: python jpg_to_png.py [sourceDirectory] [destinationDirectory]
 #             or entry.path.endswith(".png")) and entry.is_file():
 #         print(entry.path)
 ###################################
+# SECTION C
 # GET WORKING DIRECTORY WINDOWS
 # https://stackoverflow.com/questions/5137497/find-current-directory-and-files-directory
 # import os
 # cwd = os.getcwd()
 ###################################
+# SECTION D
 # ITERATE THROUGH FILES IN A DIRECTORY
 # https://www.newbedev.com/python/howto/how-to-iterate-over-files-in-a-given-directory/
 # import os
@@ -57,6 +66,7 @@ Usage: python jpg_to_png.py [sourceDirectory] [destinationDirectory]
 #             or entry.path.endswith(".png")) and entry.is_file():
 #         print(entry.path)
 
+# SECTION E
 import sys
 import os
 from PIL import Image
