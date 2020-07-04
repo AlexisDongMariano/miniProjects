@@ -46,7 +46,7 @@ def send_mail(item, price):
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login('email@gmail.com', 'password') #specify the sender email and password
+    server.login('sender_email@gmail.com', 'password') #specify the sender email and password
 	
     #compose the email message 
     subject = 'Aldo Shoe Price Checker'
@@ -57,15 +57,15 @@ def send_mail(item, price):
 	
     #list of email recipients
     email_addresses = [
-        'email@gmail.com',
-        'email@gmail.com',
-        'email@gmail.com'
+        'recipient1_email@gmail.com',
+        'recipient2_email@gmail.com',
+        'recipient3_email@gmail.com'
     ]
     
     #send the email to the recipients
     for recipient in email_addresses:
         server.sendmail(
-            'email@gmail.com',
+            'sender_email@gmail.com',
             recipient,
             msg
         )
